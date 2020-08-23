@@ -9,10 +9,9 @@ const Loading = styled.p`
 `
 
 export default function ListOfGifs({ params }) {
-  const [gifs, setGifs] = useState([])
   const [loading, setLoading] = useState(false)
+  const [gifs, setGifs] = useState([])
   const { keyword } = params
-  console.log(keyword)
 
   useEffect(function() {
     setLoading(true)
@@ -22,9 +21,9 @@ export default function ListOfGifs({ params }) {
         setGifs(giffs)
         setTimeout(() => {
           setLoading(false)
-        }, 5000)
+        }, 3000)
       })
-  }, [keyword])
+  }, [keyword]) 
 
   if (loading) {
     return <Loading>Cargando</Loading>
