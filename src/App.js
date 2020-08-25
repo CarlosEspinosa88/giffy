@@ -1,12 +1,9 @@
 import React from 'react';
-import ListOfGifs from './components/ListOfGifs';
 import Home from './pages/Home';
+import SearchResults from './pages/SearchResults';
 import Detail from './pages/Detail';
 import styled from 'styled-components';
-import { 
-  Route, 
-  // Link as Anchor 
-} from "wouter";
+import { Route, Link } from "wouter";
 
 const Container = styled.div`
   font-family: 'Barlow Semi Condensed', sans-serif;
@@ -22,21 +19,18 @@ const Container = styled.div`
   color: white 
 `
 
-
 function App() {
   return (
     <Container>
-      {/* <Link to='/'>Home</Link>
-      <Link to='/gif/Colombia'>Gif Colombia</Link>
-      <Link to='/gif/Peru'>Gif Peru</Link>
-      <Link to='/gif/Argentina'>Gif Argentina</Link>
-      <Link to='/gif/Brasil'>Gif Brasil</Link> */}
+      <Link to='/'>
+        <img alt='logo' src="/logo192.png" />
+      </Link>
       <Route 
         component={Home} 
         path="/"
       />
       <Route 
-        component={ListOfGifs} 
+        component={SearchResults} 
         path="/gif/:keyword"
       />
       <Route 
