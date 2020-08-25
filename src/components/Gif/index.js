@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import { Link } from "wouter";
 
 const Image = styled.img`
   {
@@ -11,8 +12,10 @@ const Image = styled.img`
 export default function Gif({ id, title, url}) {
   return (
     <div className="image" key={id}>
-      <h4>{title}</h4>
-      <Image src={url} />
+      <Link to={`/gif/${id}`}>
+        <h4>{title}</h4>
+        <Image Loading='lazy' alt={title} src={url} />
+      </Link>
     </div>
   )
 }

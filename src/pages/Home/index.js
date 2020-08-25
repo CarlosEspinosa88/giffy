@@ -1,50 +1,40 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Link as Anchor } from "wouter";
-
-const Link = styled(Anchor)`
-  color: white;
-  text-decoration: none;
-  padding-bottom: 10px;
-  padding-top: 10px;
-`
-
-const ListItem = styled.li`
-  list-style: none;
-  padding-bottom: 20px;
-`
-
-const Subtitle = styled.h3`
-  color: magenta;
-  padding-bottom: 20px;
-  border-bottom: 2px solid;
-`
-const ContainerHome = styled.div`
-  text-align: left;
-  width: 350px;
-  background-color: #161b24;
-  padding: 30px;
-  border-radius: 20px;
-`
-
-const GIFS_POPULARES = [
-  "Colombia",
-  "Peru",
-  "Brasil",
-  "Argentina"
-] 
+import React, { useState } from 'react';
+import { useLocation } from "wouter";
+import { useGifs } from "../../hooks/useGifs"
+import { Subtitle, ContainerHome } from "./styles.js"
+import ListOfGifs from '../../components/ListOfGifs';
 
 export default function Home() {
+  const [keyword, setKeyword] = useState('')
+  const [path, pushLocation] = useLocation()
+  const {loading, gifs} = useGifs()
+  
+  console.log(path)
+  console.log(loading)
+
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    // aqui se pone la ruta a navegar
+    pushLocation(`/gif/${keyword}`)
+  }
+
+  function handleChange(e) {
+    setKeyword(e.target.value)
+  }
+
   return (
     <ContainerHome>
+      <form onSubmit={handleSubmit}>
+        <input
+          value={keyword}
+          onChange={handleChange}
+          placeholder="Enter" 
+        />
+        <button>Buscar</button>
+      </form>
       <Subtitle>Los gif's mas populares</Subtitle>
-      {GIFS_POPULARES.map((gifPolular) => (
-        <ListItem key={gifPolular}>
-          <Link to={`/gif/${gifPolular}`}>
-            Gif's de {gifPolular}
-          </Link>
-        </ListItem>
-      ))}
+      <ListOfGifs gifs={gifs} />
     </ContainerHome>
   )
 }
