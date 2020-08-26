@@ -16,7 +16,7 @@ export default function Home() {
   function handleSubmit(e) {
     e.preventDefault()
     // aqui se pone la ruta a navegar
-    pushLocation(`/gif/${keyword}`)
+    pushLocation(`/search/${keyword}`)
   }
 
   function handleChange(e) {
