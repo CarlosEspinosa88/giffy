@@ -1,6 +1,7 @@
 import React from 'react';
-import useGlobalGifs from "../../hooks/useGlobalGifs"
-import Gif from "../../components/Gif"
+import useGlobalGifs from "../../hooks/useGlobalGifs";
+import Gif from "../../components/Gif";
+import { CardContainer } from "../../styles/GlobalStyles";
 
 export default function Detail({ params }) {
   const gifs = useGlobalGifs()
@@ -8,5 +9,7 @@ export default function Detail({ params }) {
   const gif = gifs.find(sigleGif => sigleGif.id === params.id)
 
   console.log(gif)
-  return <Gif {...gif} />
+  return <CardContainer>
+    <Gif {...gif} />
+  </CardContainer> 
 }

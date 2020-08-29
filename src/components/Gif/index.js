@@ -5,7 +5,7 @@ import { Link } from "wouter";
 const Image = styled.img`
   {
     height: 500px;
-    width: 500px
+    width: 100%
   }
 `
 
