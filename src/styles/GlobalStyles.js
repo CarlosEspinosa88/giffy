@@ -1,6 +1,9 @@
 import styled, { createGlobalStyle } from 'styled-components'
 
 export const Logo = styled.img`
+  width: 80px;
+  height: 80px;
+  margin: 30px 0;
   cursor: pointer;
 `
 export const Layout = styled.div`
@@ -16,10 +19,10 @@ export const Layout = styled.div`
 
 export const CardContainer = styled.div`
   text-align: left;
-  width: 500px;
-  background-color: #161b24;
+  width: 100%;
+  background-color: #25282e;
   padding: 30px;
-  border-radius: 20px;
+  border-radius: 0;
 `
 
 export const GlobalStyles = createGlobalStyle`

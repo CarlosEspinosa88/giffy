@@ -1,3 +1,4 @@
 import { device } from "./device"
+import { columns } from "./columns"
 
-export { device }
+export { device, columns }
