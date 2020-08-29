@@ -20,11 +20,15 @@ const Container = styled.div`
   color: white 
 `
 
+const Logo = styled.img`
+  cursor: pointer;
+`
+
 function App() {
   return (
     <Container>
       <Link to='/'>
-        <img alt='logo' src="/logo192.png" />
+        <Logo alt='logo' src="/logo192.png" />
       </Link>
       <GifsContextProvider>
         <Route 
