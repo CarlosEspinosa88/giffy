@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useLocation } from "wouter";
-import { useGifs } from "../../hooks/useGifs"
-import { Subtitle, ContainerHome } from "./styles.js"
+import { useGifs } from "../../hooks/useGifs";
+import { CardContainer } from "../../styles/GlobalStyles";
+import { Subtitle } from "./styles.js";
 import ListOfGifs from '../../components/ListOfGifs';
 
 export default function Home() {
@@ -24,7 +25,7 @@ export default function Home() {
   }
 
   return (
-    <ContainerHome>
+    <CardContainer>
       <form onSubmit={handleSubmit}>
         <input
           value={keyword}
@@ -35,6 +36,6 @@ export default function Home() {
       </form>
       <Subtitle>Los gif's mas populares</Subtitle>
       <ListOfGifs gifs={gifs} />
-    </ContainerHome>
+    </CardContainer>
   )
 }
