@@ -25,6 +25,12 @@ export const CardContainer = styled.div`
   border-radius: 0;
 `
 
+export const Subtitle = styled.h3`
+  color: magenta;
+  padding-bottom: 20px;
+  border-bottom: 2px solid;
+`
+
 export const GlobalStyles = createGlobalStyle`
   html {
     box-sizing: border-box;

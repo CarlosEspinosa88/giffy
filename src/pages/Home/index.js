@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { useLocation } from "wouter";
 import { useGifs } from "../../hooks/useGifs";
 import { CardContainer } from "../../styles/GlobalStyles";
-import { Subtitle } from "./styles.js";
+import { Subtitle } from "../../styles/GlobalStyles";
 import ListOfGifs from '../../components/ListOfGifs';
+import TrendingSearches from '../../components/TrendingSearches'
 
 export default function Home() {
   const [keyword, setKeyword] = useState('')
@@ -36,6 +37,7 @@ export default function Home() {
       </form>
       <Subtitle>Los gif's mas populares</Subtitle>
       <ListOfGifs gifs={gifs} />
+      <TrendingSearches/>
     </CardContainer>
   )
 }
