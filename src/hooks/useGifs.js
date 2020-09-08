@@ -1,5 +1,5 @@
-import {useContext, useEffect, useState} from 'react';
-import getGifs from '../services/getGifs';
+import {useContext, useEffect, useState} from "react";
+import getGifs from "../services/getGifs";
 import GifsContext from "../context/GifsContext"
 
 export function useGifs({keyword} = { keyword: null }) {
@@ -9,13 +9,13 @@ export function useGifs({keyword} = { keyword: null }) {
   
   useEffect(function() {
     setLoading(true)
-    const keywordDefault = keyword || localStorage.getItem('lastKeyword') || "random"
-    console.log('efecto ejecutado')
+    const keywordDefault = keyword || localStorage.getItem("lastKeyword") || "random"
+    console.log("efecto ejecutado")
 
     getGifs({ keyword: keywordDefault })
       .then(gifsKeyword => {
         setGifs(gifsKeyword)
-        localStorage.setItem('lastKeyword', keyword)
+        localStorage.setItem("lastKeyword", keyword)
         setTimeout(() => {  
           setLoading(false)
         }, 3000)

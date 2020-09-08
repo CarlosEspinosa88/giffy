@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import ListOfGifs from "../../components/ListOfGifs";
 import Spinner from "../../components/Spinner";
 import { useGifs } from "../../hooks/useGifs";

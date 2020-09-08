@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from 'styled-components'
+import styled, { css, keyframes } from "styled-components"
 
 const rotate = keyframes`
   from {
@@ -10,9 +10,9 @@ const rotate = keyframes`
 `
 
 const animation = ({ 
-  time = '1.2s', 
-  infinite = 'infinite',
-  type = 'cubic-bezier(0.5, 0, 0.5, 1)'
+  time = "1.2s", 
+  infinite = "infinite",
+  type = "cubic-bezier(0.5, 0, 0.5, 1)"
 } = {}) => css`animation: ${time} ${rotate} ${type} ${infinite}`
 
 export const Container = styled.div`

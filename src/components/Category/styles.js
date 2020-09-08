@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { device } from "../../theme";
-import { Link as Anchor } from 'wouter'
+import { Link as Anchor } from "wouter"
 
 export const ListOfTrending = styled.div`
   grid-gap: 12px;

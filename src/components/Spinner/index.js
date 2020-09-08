@@ -1,5 +1,5 @@
-import React from 'react'
-import { Container, Internal} from './styles'
+import React from "react"
+import { Container, Internal} from "./styles"
 
 export default function Spinner () {
   return (

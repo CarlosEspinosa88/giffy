@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import useGlobalGifs from "../../hooks/useGlobalGifs";
 import Gif from "../../components/Gif";
 import { CardContainer } from "../../utils/styles";
