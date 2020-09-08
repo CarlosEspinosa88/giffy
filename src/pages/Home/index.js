@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation } from "wouter";
 import { useGifs } from "../../hooks/useGifs";
-import { CardContainer } from "../../styles/GlobalStyles";
-import { Subtitle } from "../../styles/GlobalStyles";
+import { CardContainer, Subtitle } from "../../utils/styles";
 import ListOfGifs from '../../components/ListOfGifs';
 import TrendingSearches from '../../components/TrendingSearches'
 

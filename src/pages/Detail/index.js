@@ -1,7 +1,7 @@
 import React from 'react';
 import useGlobalGifs from "../../hooks/useGlobalGifs";
 import Gif from "../../components/Gif";
-import { CardContainer } from "../../styles/GlobalStyles";
+import { CardContainer } from "../../utils/styles";
 
 export default function Detail({ params }) {
   const gifs = useGlobalGifs()

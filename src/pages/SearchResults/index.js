@@ -2,7 +2,7 @@ import React from 'react';
 import ListOfGifs from "../../components/ListOfGifs";
 import Spinner from "../../components/Spinner";
 import { useGifs } from "../../hooks/useGifs";
-import { CardContainer, Subtitle } from "../../styles/GlobalStyles";
+import { CardContainer, Subtitle } from "../../utils/styles";
 
 export default function SearchResults({ params }) {
   const { keyword } = params
