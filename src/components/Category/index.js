@@ -1,6 +1,6 @@
 import React from 'react'
 import {ListOfTrending, List, Link} from './styles'
-import {Subtitle} from "../../styles/GlobalStyles";
+import {Subtitle} from "../../utils/styles";
 
 export default function Category({trends = []}) {
   return (
