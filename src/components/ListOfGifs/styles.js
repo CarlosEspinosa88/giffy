@@ -5,6 +5,7 @@ import { device, columns } from "../../theme";
 export const List = styled.div`
   column-count: ${columns.one};
   column-gap: .5em;
+  min-height: 100vh;
 
   
   @media ${device.tablet} {

@@ -8,9 +8,8 @@ export default function ListOfGifs({gifs}) {
     <List>
       {
         gifs.map(({id, title, url}) => 
-          <Item>
+          <Item key={id}>
             <Gif
-              key={id}
               id={id}
               title={title}
               url={url}
