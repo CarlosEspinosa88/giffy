@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import getTrendingTermsGifs from "../../services/getTrendingTermsGifs";
 import Category from "../Category";
 
-export default function TrendingSearch() {
+function TrendingSearch() {
   const [trends, setTrends] = useState([]);
 
   useEffect(() => {
@@ -13,4 +13,34 @@ export default function TrendingSearch() {
  return (
    <Category trends={trends} />
  )
+}
+
+export default function LazyTrending () {
+  const [show, setShow] = useState(false)
+  const elementRef = useRef()
+
+  useEffect(() => {
+    const onChange = (entries, observer) => {
+      const elementToIntersected = entries[0]
+      if (elementToIntersected.isIntersecting) {
+        setShow(true)
+        observer.disconnect()
+      }
+    }
+
+    const observer = new IntersectionObserver(onChange, {
+      rootMargin: '100px'
+    })
+
+    observer.observe(elementRef.current)
+
+    return () => observer.disconnect()
+  })
+
+  return (
+    <div ref={elementRef}>
+      {show ? <TrendingSearch /> : null}
+    </div>
+
+  )
 }
